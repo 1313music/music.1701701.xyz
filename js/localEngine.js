@@ -69,8 +69,8 @@ document.getElementById('heoMusic-page').classList.add('localMusic');
 function encodeNonAscii(str) {
   if (!str) return '';
   
-  // 只对URL中的空格进行编码，保留中文字符不变
-  return str.replace(/ /g, '%20');
+  // 对URL中的非ASCII字符进行编码，包括中文字符
+  return encodeURIComponent(str);
 }
 
 // 声明全局变量ap
